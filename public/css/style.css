@@ -1,0 +1,90 @@
+* { 
+    box-sizing: border-box;
+}
+html { 
+    font-size: 20px;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(60, 60, 60);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+header {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    color: rgb(210, 210, 210);
+    background-color: rgb(30, 30, 30);
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+main {
+    margin: 0 auto;
+    background-color: rgb(210, 210, 210);
+    width: 48rem;
+    padding: 1rem;
+}
+table {
+    width: 100%;
+    margin: 3rem 0;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 0.3rem 0;
+    text-align: center;
+    border: 1px solid;
+    width: 25%;
+}
+td {
+    padding-left: 1.2rem;
+    text-align: left;
+}
+th {
+    font-size: 1.2rem;
+}
+input, select {
+    font-size: 1rem;
+}
+
+input[type=text], select {
+    width: 100%;
+}
+input[type=submit] {
+    display: block;
+    margin: 2rem auto 0 auto;
+    height: 1.8rem;
+    border-radius: 0.3rem;
+}
+.menu {
+    margin: 0;
+    padding: 0.9rem 4vw 1rem 4vw;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: rgb(180, 180, 180);
+    cursor: pointer;
+    transition-duration: 0.6s;
+    display: inline;
+}
+.menu:hover {
+    background-color: rgb(120, 120, 120);
+    color: white;
+}
+.menu-selected {
+    margin: 0;
+    padding: 0.9rem 4vw 1rem 4vw;
+    font-size: 1.1rem;
+    text-decoration: underline;
+    color: rgb(180, 180, 180);
+    cursor: default;
+    display: inline;
+}
+.form-container {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: 26rem;
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+}

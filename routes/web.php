@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/cars', [DataController::class, 'cars']);
+Route::get('/purchase', [DataController::class, 'purchase']);
+Route::get('/customer', [DataController::class, 'customer']);
+Route::get('/sales', [DataController::class, 'sales']);
+
+Route::post('carsubmit', [DataController::class, 'purchaseSubmit']);
+Route::post('customersubmit', [DataController::class, 'purchaseSubmit']);
