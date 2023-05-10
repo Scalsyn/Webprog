@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('car');
             $table->unsignedInteger('customer');
             $table->unsignedInteger('vendor');
+            $table->unsignedInteger('income');
             $table->dateTime('date');
             $table->foreign('car')->references('id')->on('cars')->onDelete('cascade');
             $table->foreign('customer')->references('id')->on('customers')->onDelete('cascade');

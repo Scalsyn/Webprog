@@ -36,7 +36,7 @@
                     <td>{{ $row->brand .' '. $row->model }}</td>
                     <td>{{ $row->cfname .' '. $row->clname }}</td>
                     <td>{{ $row->vfname .' '. $row->vlname }}</td>
-                    <td>{{ $row->price .' $' }}</td>
+                    <td>{{ $row->income .' $' }}</td>
                     <td>{{ $row->date }}</td>
                 </tr>
                 @endforeach
