@@ -8,17 +8,18 @@
 </head>
 <body>
     <header>
-        <h1>American Cardealer</h1>
+        <h1>American Cardealer</h1>       
         <a class="menu" href="/cars">Jármű lista</a>
-        <a class="menu-selected">Új eladás</a>
+        <a class="menu" href="/purchase">Új eladás</a>
         <a class="menu" href="/customer">Új vásárló</a>
         <a class="menu" href="/sales">Forgalom</a>
-        <a class="menu" href="/admin">Admin oldal</a>
+        <a class="menu-selected">Admin oldal</a>
     </header>
     <main>
-        <h2>Új eladás</h2>
+        <h2>Admin oldal</h2>
+        <h4>Vásárló törlése<h4>
         <div class="form-container">
-            <form action="carsubmit" method="post" autocomplete="off">
+            <form action="customerdelete" method="post" autocomplete="off">
                 @csrf
                 <label for="customer">Vásárló:</label>
                 <select name="customer" id="customer" required>
@@ -27,13 +28,13 @@
                     <option value={{ "$customer->id" }}>{{ $customer->cfname .' '. $customer->clname .' '. $customer->cbdate}}</option>
                     @endforeach
                 </select></br></br>
-                <label for="vendor">Eladó:</label>
-                <select name="vendor" id="vendor" required>
-                <option value="" selected disabled hidden>--Válasszon--</option>
-                    @foreach($vendors as $vendor)
-                    <option value={{ "$vendor->id" }}>{{ $vendor->vfname .' '. $vendor->vlname}}</option>
-                    @endforeach
-                </select></br></br>
+                <input type="submit" value="Töröl">
+            </form>
+        </div>
+        <h4>Jármű törlése<h4>
+        <div class="form-container">
+            <form action="cardelete" method="post" autocomplete="off">
+                @csrf
                 <label for="car">Jármű:</label>
                 <select name="car" id="car" required>
                 <option value="" selected disabled hidden>--Válasszon--</option>
@@ -41,7 +42,7 @@
                     <option value={{ "$car->id" }}>{{ $car->brand .' '. $car->model}}</option>
                     @endforeach
                 </select>
-                <input type="submit" value="Megrendel">
+                <input type="submit" value="Töröl">
             </form>
         </div>
     </main>

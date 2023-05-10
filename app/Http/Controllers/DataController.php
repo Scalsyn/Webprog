@@ -28,16 +28,28 @@ class DataController extends Controller
     {
         return view('customer');
     }
+    public function admin()
+    {
+        $customers = CustomerModel::all();
+        $cars = CarModel::all();
+        return view('admin', compact('cars', 'customers'));
+    }
     public function sales()
     {
-        return view('sales');
+        $data = SalesModel::join('cars', 'sales.id', '=', 'cars.id')
+              		->join('customers', 'sales.id', '=', 'customers.id')
+                    ->join('vendors', 'sales.id', '=', 'vendors.id')
+              		->get(['sales.id', 'cars.brand', 'cars.model', 'customers.cfname', 'customers.clname', 
+                    'vendors.vfname', 'vendors.vlname', 'cars.price', 'sales.date']);
+
+        return view('sales', compact('data'));
     }
 
     public function purchaseSubmit(Request $req)
     {
         $data = $req->input();
         $now = date_create()->format('Y-m-d H:i:s');
-        try{
+        try {
             $sale = new SalesModel;
             $sale->car = $data['car'];
             $sale->customer = $data['customer'];
@@ -46,26 +58,51 @@ class DataController extends Controller
             $sale->save();
             return redirect('sales')->with('status',"Insert successfully");
         }
-        catch(Exception $e){
+        catch(Exception $e) {
             return redirect('sales')->with('failed',"operation failed");
         }
     }
-
-    public function customerSubmit(Request $req)
+    public function customerSubmit(Request $req) 
     {
         $data = $req->input();
-        try{
+        try {
             $customer = new CustomerModel;
-            $customer->firstname = $data['fname'];
-            $customer->lastname = $data['lname'];
-            $customer->birthdate = $data['bdate'];
-            $customer->address = $data['address'];
-            $customer->phone = $data['phone'];
+            $customer->cfname = $data['cfname'];
+            $customer->clname = $data['clname'];
+            $customer->cbdate = $data['cbdate'];
+            $customer->caddress = $data['caddress'];
+            $customer->cphone = $data['cphone'];
             $customer->save();
             return redirect('customer')->with('status',"Insert successfully");
         }
-        catch(Exception $e){
+        catch(Exception $e) {
             return redirect('customer')->with('failed',"operation failed");
+        }
+    }
+    public function deleteCustomer(Request $req) 
+    {
+        $data = $req->input();
+        try {
+
+            CustomerModel::where('id', $data['customer'])->delete();
+            
+            return redirect('admin')->with('status',"Insert successfully");
+        }
+        catch(Exception $e) {
+            return redirect('admin')->with('failed',"operation failed");
+        }
+    }
+    public function deleteCar(Request $req) 
+    {
+        $data = $req->input();
+        try {
+
+            CarModel::where('id', $data['car'])->delete();
+            
+            return redirect('admin')->with('status',"Insert successfully");
+        }
+        catch(Exception $e) {
+            return redirect('admin')->with('failed',"operation failed");
         }
     }
 }

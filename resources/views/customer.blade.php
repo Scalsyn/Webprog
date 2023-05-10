@@ -13,22 +13,23 @@
         <a class="menu" href="/purchase">Új eladás</a>
         <a class="menu-selected">Új vásárló</a>
         <a class="menu" href="/sales">Forgalom</a>
+        <a class="menu" href="/admin">Admin oldal</a>
     </header>
     <main>
     <h2>Új vásárló</h2>
         <div class="form-container">
             <form action="customersubmit" method="post" autocomplete="off">
                 @csrf
-                <label for="fname">Keresztnév:</label>
-                <input type="text" id="fname" name="fname" required><br><br>
-                <label for="lname">Vezetéknév:</label>
-                <input type="text" id="lname" name="lname" required><br><br>
-                <label for="bdate">Születési idő:</label><br>
-                <input type="date" id="bdate" name="bdate" required><br><br>
-                <label for="address">Cím:</label>
-                <input type="text" id="address" name="address" required><br><br>
-                <label for="phone">Telefonszám:</label>
-                <input type="text" id="phone" name="phone" required><br><br>
+                <label for="cfname">Keresztnév:</label>
+                <input type="text" id="cfname" name="cfname" required><br><br>
+                <label for="clname">Vezetéknév:</label>
+                <input type="text" id="clname" name="clname" required><br><br>
+                <label for="cbdate">Születési idő:</label><br>
+                <input type="date" id="cbdate" name="cbdate" required><br><br>
+                <label for="caddress">Cím:</label>
+                <input type="text" id="caddress" name="caddress" required><br><br>
+                <label for="cphone">Telefonszám:</label>
+                <input type="text" id="cphone" name="cphone" required><br><br>
                 <input type="submit" value="Elment">
             </form>
         </div>

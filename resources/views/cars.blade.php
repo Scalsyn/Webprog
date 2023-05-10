@@ -13,6 +13,7 @@
         <a class="menu" href="/purchase">Új eladás</a>
         <a class="menu" href="/customer">Új vásárló</a>
         <a class="menu" href="/sales">Forgalom</a>
+        <a class="menu" href="/admin">Admin oldal</a>
     </header>
     <main>
         <h2>Elérhető járművek és árlista</h2>

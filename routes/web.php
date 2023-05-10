@@ -18,6 +18,9 @@ Route::get('/cars', [DataController::class, 'cars']);
 Route::get('/purchase', [DataController::class, 'purchase']);
 Route::get('/customer', [DataController::class, 'customer']);
 Route::get('/sales', [DataController::class, 'sales']);
+Route::get('/admin', [DataController::class, 'admin']);
 
 Route::post('carsubmit', [DataController::class, 'purchaseSubmit']);
-Route::post('customersubmit', [DataController::class, 'purchaseSubmit']);
+Route::post('customersubmit', [DataController::class, 'customerSubmit']);
+Route::post('customerdelete', [DataController::class, 'deleteCustomer']);
+Route::post('cardelete', [DataController::class, 'deleteCar']);

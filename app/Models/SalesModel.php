@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class SalesModel extends Model
 {
-    protected $table = 'sales';
-    public $timestamps = false;
-    protected $fillable = [
-		'car', 'customer','vendor', 'date'
-	];
+  use HasFactory;
+  protected $table = 'sales';
+  public $timestamps = false;
+  protected $fillable = [ 'id', 'date'];
 }

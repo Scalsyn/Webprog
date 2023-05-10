@@ -17,9 +17,9 @@ return new class extends Migration
             $table->unsignedInteger('customer');
             $table->unsignedInteger('vendor');
             $table->dateTime('date');
-            $table->foreign('car')->references('id')->on('cars');
-            $table->foreign('customer')->references('id')->on('customers');
-            $table->foreign('vendor')->references('id')->on('vendors');
+            $table->foreign('car')->references('id')->on('cars')->onDelete('cascade');
+            $table->foreign('customer')->references('id')->on('customers')->onDelete('cascade');
+            $table->foreign('vendor')->references('id')->on('vendors')->onDelete('cascade');
         });
     }
 

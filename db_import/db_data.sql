@@ -28,9 +28,9 @@ INSERT INTO cars (brand, model, color, price)
 INSERT INTO cars (brand, model, color, price) 
     VALUES("GMC", "Canyon", "4 szín", 26800);
 
-INSERT INTO vendors (firstname, lastname, birthdate, address, phone) 
+INSERT INTO vendors (vfname, vlname, vbdate, vaddress, vphone)
     VALUES("John", "Doe", '1977-10-21', "4906 Mulberry Avenue, Arkansas", "501-200-2686");
-INSERT INTO vendors (firstname, lastname, birthdate, address, phone) 
+INSERT INTO vendors (vfname, vlname, vbdate, vaddress, vphone)
     VALUES("Adam", "Rich", '1985-06-12', "4406 Masonic Hill Road, Arkansas", "501-786-8191");
 
 
